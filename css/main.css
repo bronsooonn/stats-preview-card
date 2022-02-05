@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --Very-dark-blue: hsl(233, 47%, 7%);
+  --Dark-desaturated-blue: hsl(244, 38%, 16%);
+  --Soft-violet: hsl(277, 64%, 61%);
+  --White: hsl(0, 0%, 100%);
+  --Slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --Slightly-transparent-white: hsla(0, 0%, 100%, 0.6);
+  --inter-font-family: 'Inter', sans-serif;
+  --lexend-font-family: 'Lexend Deca', sans-serif;
+}
+
+body {
+  font-size: 15px;
+  background-color: var(--Very-dark-blue);
+}
+
+main {
+  width: 1080px;
+  height: 446px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "strat hero";
+  width: 1110px;
+}
+
+.content__strat {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: strat;
+  background-color: var(--Dark-desaturated-blue);
+  color: var(--White);
+  padding: 4.5rem 6rem 4.5rem 4.5rem;
+  border-radius: 10px 0 0 10px;
+}
+
+.content__strat .strat__header {
+  font-family: var(--lexend-font-family);
+  font-size: 2.3em;
+}
+
+.content__strat .strat__header__span {
+  color: var(--Soft-violet);
+}
+
+.content__strat .strat__desc {
+  margin-top: 1.6rem;
+  font-family: var(--inter-font-family);
+  line-height: 1.6;
+  color: var(--Slightly-transparent-white);
+}
+
+.content__strat .strat__insight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 2rem;
+  position: relative;
+  top: 4.5rem;
+}
+
+.content__strat .strat__insight .insight--number {
+  color: var(--White);
+  font-family: var(--inter-font-family);
+}
+
+.content__strat .strat__insight .insight--name {
+  color: var(--Slightly-transparent-white);
+  font-family: var(--inter-font-family);
+  text-transform: uppercase;
+  font-size: .8em;
+  margin-top: .3rem;
+  letter-spacing: .2em;
+}
+
+.content__hero {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: hero;
+  border-radius: 0 10px 10px 0;
+}
+
+.content__hero .hero__img {
+  background-image: url("../images/image-header-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 0 10px 10px 0;
+}
+
+.content__hero .hero__img .hero__accent {
+  background-color: var(--Soft-violet);
+  height: 100%;
+  width: 100%;
+  opacity: .5;
+  border-radius: 0 10px 10px 0;
+}
+
+@media only screen and (max-width: 1024px) {
+  main {
+    width: 950px;
+  }
+  main .content__strat {
+    padding: 3.5rem;
+  }
+  main .content__strat .strat__insight {
+    top: 3rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    padding: 2rem;
+  }
+  main {
+    width: 100%;
+    height: 100%;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "hero" "strat";
+    position: relative;
+    top: unset;
+    left: unset;
+    -webkit-transform: unset;
+            transform: unset;
+  }
+  main .content__strat {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: strat;
+    border-radius: 0 0 10px 10px;
+  }
+  main .content__strat .strat__insight {
+    margin-bottom: 3rem;
+  }
+  main .content__hero {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: hero;
+    border-radius: 10px 10px 0 0;
+  }
+  main .content__hero .hero__img {
+    border-radius: 10px 10px 0 0;
+  }
+  main .content__hero .hero__img .hero__accent {
+    border-radius: 10px 10px 0 0;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  body {
+    padding: 5rem 1.5rem;
+  }
+  main {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 245px 1fr 1fr;
+        grid-template-rows: 245px 1fr 1fr;
+        grid-template-areas: "hero" "strat" "strat";
+  }
+  main .content__strat {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: strat;
+    text-align: center;
+    padding: 2rem;
+  }
+  main .content__strat .strat__header {
+    font-size: 1.8em;
+    margin-top: .5rem;
+  }
+  main .content__strat .strat__insight {
+    display: block;
+    margin: auto;
+  }
+  main .content__strat .strat__insight .insight__que {
+    padding-bottom: 2rem;
+  }
+  main .content__strat .strat__insight .insight--name {
+    margin-bottom: 2rem;
+  }
+  main .content__hero {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: hero;
+  }
+  main .content__hero .hero__img {
+    background-image: url("../images/image-header-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+  }
+  main .content__hero .hero__img .hero__accent {
+    background-color: var(--Soft-violet);
+    height: 100%;
+    width: 100%;
+    opacity: .5;
+  }
+}
+/*# sourceMappingURL=main.css.map */
